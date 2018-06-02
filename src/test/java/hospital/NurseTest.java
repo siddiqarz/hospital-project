@@ -6,10 +6,8 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-public class DoctorTest {
-	Doctor underTest = new Doctor ("1", "Joe", "peds");
-	// instance variables required: Employee number, name and Specialty area
-	// test on state verification (variables e.g blood drawn)
+public class NurseTest {
+	Nurse underTest = new Nurse("2", "Jack", 1); // employee#, empName, #of patients.
 	Patient patient = new Patient();
 
 	@Test
@@ -21,35 +19,39 @@ public class DoctorTest {
 																// units
 	}
 
+	public String paySalary() {
+		return "50000";
+	}
+
 	@Test
 	public void shouldIncreaseHealthLevel() {
 
 		int healthLevelBefore = patient.getHealthLevel();
 		underTest.treatPatient(patient);
 		int healthLevelAfter = patient.getHealthLevel();
-		assertThat(healthLevelAfter - healthLevelBefore, is(5));
+		assertThat(healthLevelAfter - healthLevelBefore, is(3));
 	}
 
 	@Test
 	public void shouldReturnEmpNumber() {
 		String check = underTest.getEmpNumber();
-		assertEquals(check, "1");
+		assertEquals(check, "2");
 	}
 
 	@Test
 	public void shouldReturnEmpName() {
 		String check = underTest.getEmpName();
-		assertEquals(check, "Joe");
+		assertEquals(check, "Jack");
 	}
 
-@Test
-public void shouldReturnSpecialty() {
-	String check = underTest.getSpecialty();
-	assertEquals(check, "peds");	
-}
-@Test
-public void shouldGetPaid90k() {
-	String check = underTest.paySalary();
-	assertEquals(check, "90000");
-}
+	@Test
+	public void shouldReturnNumberOfPatients() {
+		int check = underTest.getNumPatients();
+		assertEquals(check, 1);
+	}
+	@Test
+	public void shouldGetPaid50k() {
+		String check = underTest.paySalary();
+		assertEquals(check, "50,000");
+	}
 }
