@@ -3,8 +3,8 @@ package hospital;
 public class Nurse extends Employee implements MedicalDuties {
 	private int numPatients;
 
-	public Nurse(String empNumber, String empName, int numPatients) {
-		this.empNumber = empNumber;
+	public Nurse(String empNum, String empName, int numPatients) {
+		this.empNumber = empNum;
 		this.empName = empName;
 		this.numPatients = numPatients;
 

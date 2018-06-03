@@ -24,7 +24,6 @@ public class Doctor extends Employee implements MedicalDuties {
 
 	}
 	public String getSpecialty() {
-
 		return specialty;
 	}
 	@Override

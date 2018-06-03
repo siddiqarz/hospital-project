@@ -24,7 +24,7 @@ public class DoctorTest {
 	@Test
 	public void shouldIncreaseHealthLevel() {
 
-		int healthLevelBefore = patient.getHealthLevel();
+		int healthLevelBefore = patient.getHealthLevel();  
 		underTest.treatPatient(patient);
 		int healthLevelAfter = patient.getHealthLevel();
 		assertThat(healthLevelAfter - healthLevelBefore, is(5));
